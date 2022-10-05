@@ -1,0 +1,65 @@
+@charset "utf-8";
+
+.container.inline {
+  display: table;
+  margin: auto;
+  box-shadow: none;
+  border: 1px solid #d6d4ca;
+  color: var(--bs-dark);
+}
+
+.calendar>.header .month-name {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.calendar>.header .month-name>span {
+  order: 2;
+}
+.calendar>.header .month-name>span::before {
+  content: '年 ';
+  font-weight: 500;
+}
+
+.calendar>.header button>img, .calendar>.header button>svg {
+  fill: var(--bs-primary);
+  color: var(--bs-primary);
+}
+
+.calendar>.daynames-row>.dayname[title="日曜日"] {
+  color: var(--bs-accent);
+}
+.calendar>.daynames-row>.dayname[title="土曜日"] {
+  color: var(--bs-sub);
+}
+
+.container.range-plugin .calendar>.days-grid>.day.end,
+.container.range-plugin .calendar>.days-grid>.day.start {
+  background-color: var(--bs-primary);
+}
+
+.calendar>.days-grid>.day {
+  border-radius: 5px;
+}
+
+.calendar>.days-grid>.day.today {
+  color: currentColor;
+  font-weight: 600;
+}
+
+.container.range-plugin .calendar>.days-grid>.day.start::after {
+  border-left-color: var(--bs-primary);
+}
+
+.container.range-plugin .calendar>.days-grid>.day.end::after {
+  border-right-color: var(--bs-primary);
+}
+
+.container.range-plugin .calendar>.days-grid>.day.in-range {
+  background-color: #d6d4ca;
+}
+
+.container.lock-plugin .calendar>.days-grid>.day.locked:not(.start):not(.end) {
+  background-image: repeating-linear-gradient(135deg,transparent,rgb(198,118,132,.5) 2px,transparent 2px,transparent 4px);
+}

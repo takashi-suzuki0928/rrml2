@@ -1,0 +1,346 @@
+@charset "utf-8";
+
+$primary: #908b6f;
+$secondary: #4a4842;
+$dark: #4a4842;
+$light: #f8f7f4;
+
+$text-muted: #a7a6a1;
+
+$input-border-color: #d6d4ca;
+$input-disabled-bg: #d6d4ca;
+$input-disabled-border-color: #d6d4ca;
+$form-text-color: $dark;
+$btn-padding-y: .75rem;
+
+@import "../bootstrap/scss/functions";
+@import "../bootstrap/scss/variables";
+@import "../bootstrap/scss/mixins";
+
+$custom-colors: (
+  "sub": #6f9088,
+  "accent": #c67684
+);
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+$custom-spacers: (
+  "x2": $spacer * 2,
+  "x2-5": $spacer * 2.5
+);
+$spacers: map-merge($spacers, $custom-spacers);
+
+@import "../bootstrap/scss/bootstrap";
+
+html {
+  font-size: 15px;
+}
+
+body {
+  background-color: $light;
+  color: $dark;
+}
+
+.btn-primary,
+.btn-primary:disabled,
+.btn-primary.disabled {
+  color: $white;
+}
+
+.form-control::placeholder,
+.form-control::-webkit-input-placeholder,
+.form-control::-ms-input-placeholder {
+  color: $dark;
+  opacity: .5;
+}
+
+/* bootstraps */
+
+.form-control-plaintext {
+  pointer-events: none;
+}
+
+.form-select {
+  padding-right: 1.75rem;
+  background-position: right .35rem center;
+}
+
+.form-label,
+.col-form-label {
+  font-weight: 600;
+}
+
+.form-text {
+  opacity: .75;
+}
+
+.form-floating > label {
+  opacity: .7;
+}
+
+/* originals */
+
+#rrml-header {
+  margin: 0;
+}
+
+#rrml-page-title {
+  margin: 3rem 0;
+  color: $primary;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.rrml-sub-block {
+  background-color: $white;
+  padding: 1.75rem 0 2rem;
+}
+
+#rrml-form {
+  margin: 0 auto 2em;
+}
+
+.required-badge {
+  background-color: var(--bs-accent);
+}
+
+h2,
+.rrml-like-h2 {
+  color: var(--bs-primary);
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+h3 {
+  color: var(--bs-primary);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+h4 {
+  color: var(--bs-primary);
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.bi.bi-chevron-right[class*=" bi-"]::before {
+  font-weight: 600;
+}
+
+.text-hint {
+  font-size: .85em;
+  opacity: .8;
+}
+
+.rrml-inner {
+  margin: 0 auto;
+
+  &:not(.rrml-l) {
+    width: min(100vw - 50px, 90%);
+    max-width: 700px;
+  }
+  &.rrml-l {
+    width: min(100vw - 80px, 90%);
+    max-width: 400px;
+  }
+}
+
+.rrml-nest-wrap {
+  border-left: 2px solid var(--bs-primary);
+}
+
+.rrml-nest-wrap dd {
+  margin-bottom: .3rem;
+}
+
+.rrml-arrow-text-link {
+  text-decoration: none;
+  font-size: .85em;
+}
+
+.form-short {
+  max-width: 12rem;
+}
+
+.calendar-wrap {
+  display: flex;
+  flex-direction: column-reverse;
+
+  .easepick-wrapper {
+    margin: .5rem 0 1rem;
+  }
+}
+
+.rrml-brackets {
+  position: relative;
+  max-width: 23rem;
+
+  &::before,
+  &::after {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    border: 1px solid var(--bs-primary);
+  }
+  &::before {
+    left: 0;
+    border-right-width: 0;
+  }
+  &::after {
+    right: 0;
+    border-left-width: 0;
+  }
+}
+
+.rrml-col-4 {
+  column-count: 4;
+  column-width: 150px;
+}
+
+/* my page */
+
+.rrml-inner-content {
+  max-width: 380px;
+}
+
+.gift-code-card {
+  position: relative;
+
+  .rrml-inner-content {
+    margin-top: clamp(0px, 2vw - 10px, 30px);
+    margin-bottom: clamp(0px, 2vw - 10px, 30px);
+  }
+}
+
+.gift-code-status-badge {
+  display: inline-block;
+  padding: .3em .7em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: $border-radius 0 $border-radius 0;
+  color: var(--bs-white);
+}
+
+.code-share-heading {
+  width: auto;
+  font-size: 1rem;
+}
+
+.list-group-sub .list-group-item {
+  border-width: 0;
+  font-size: .9em;
+}
+
+.code-share-wrap {
+  .btn {
+    color: #fff;
+  }
+  .btn-line {
+    background-color: #06c755;
+  }
+  .btn-wechat {
+    background-color: #07c160;
+  }
+}
+
+.bg-off {
+  background-color: #ccc;
+}
+
+.bg-main {
+  background-color: $primary;
+}
+
+.bg-sub {
+  background-color: var(--sub-color);
+}
+
+.attend-cal-date {
+  min-width: 100px;
+}
+
+#attend-calendar-accordion .attend-cal-date {
+  min-width: 80px;
+}
+
+
+/* confirm list */
+
+.dl-name {
+  margin-bottom: .3rem;
+  flex-shrink: 0;
+}
+
+.dl-total {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+/* flow steps */
+
+.booking-flow {
+  margin: .5em 0 1em;
+}
+
+.booking-flow-title {
+  text-align: center;
+}
+
+.booking-flow-body {
+  list-style: none;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: stretch;
+  align-items: stretch;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  font-size: 13px;
+}
+
+.booking-flow-item {
+  flex-grow: 1;
+  position: relative;
+  padding: 3px 7px;
+  background: linear-gradient(90deg, #ddd, #eee 30%, #eee 70%, #ddd);
+
+  &:not(.current) {
+    color: $primary;
+  }
+  &.current {
+    color: $dark;
+  }
+
+  &:not(:last-child) {
+    padding-right: 16px;
+  }
+  &:not(:last-child)::after {
+    content: '';
+    display: block;
+    width: .5em;
+    height: .5em;
+    position: absolute;
+    top: 50%;
+    right: .5em;
+    border-top: 1px solid #fff;
+    border-right: 1px solid #fff;
+    transform: translateY(-50%) rotate(45deg) skew(10deg, 10deg);
+  }
+}
+
+.booking-flow-step {
+  font-weight: 700;
+}
+
+.booking-flow-do {
+  display: block;
+}
+
+#footer {
+  margin-top: 3rem;
+}
